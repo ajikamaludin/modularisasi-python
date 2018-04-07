@@ -1,25 +1,42 @@
-#sequential
-count = 140
-subject = "remote work with pthon"
-print('Seminar AMIKOM 2018')
-print('=' * 10)
-print('jumalah kehadiran = {} dan judul = {}'.format(count,subject))
-print('jumalah kehadiran = %s dan judul = %s'%(count,subject))
+title = 'Penampilan Data Peserta Seminar'
 
-#subject
-print('subject = %s' % subject)
+print(title)
 
-qouta = 160
-
-if count/qouta >= 0.8:
-    print('rame')
-else:
-    print('sepi')
+#encapsulasi
+class Manusia:
+    def __init__(self):
+        self.nama = 'Unamed'
+        self.usia = 25
+        self.alamat = 'Jogja'
 
 
-#loop
-left_over = qouta - count
-print(left_over)
+    def __repr__(self):
+        return 'Nama {},usia {},alamat {}'.format(self.nama,self.usia,self.alamat)
 
-for i in range(0, left_over + 1):
-    print('kursi yang tersisa {}'.format(i))
+    def bicara(self):
+        print('Hoi! Nama saya {}'.format(self.nama))
+
+
+
+class PesertaSeminar(Manusia):
+    def bicara(self):
+        print('My name is {}'.format(self.nama))
+
+#instantiatian
+adam = Manusia()
+adam.nama = 'Adam'
+fulan = PesertaSeminar()
+fulanah = PesertaSeminar()
+
+fulan.nama = 'Susi'
+fulan.usia = 28
+fulan.alamat = 'Bali'
+
+fulanah.nama = 'Joko'
+fulanah.usia = 53
+fulanah.alamat = 'Solo'
+
+#polymorpisem
+adam.bicara()
+fulanah.bicara()
+fulan.bicara()
